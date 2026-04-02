@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>STONKS.EXE</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <div class="logo"> STONKS.EXE</div>
+        <div class="nav-links">
+            <a href="/">MARKET</a>
+            <a href="/portfolio">THE VAULT</a>
+            <span class="balance-pill">${{ session.balance|round(2) if session.balance else '10000.00' }}</span>
+        </div>
+    </nav>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}<div class="alert">{{ message }}</div>{% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    {% block content %}{% endblock %}
+</body>
+</html>

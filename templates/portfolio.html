@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<div style="padding: 40px 5%;">
+    <h1>Asset Portfolio</h1>
+    <div style="font-size: 1.2rem; opacity: 0.8;">Liquid Cash: <span style="color: var(--stonks-green)">${{ balance }}</span></div>
+
+    {% if assets %}
+    <table>
+        <tr style="opacity: 0.6;">
+            <th>ASSET</th>
+            <th>QUANTITY</th>
+            <th>STATUS</th>
+        </tr>
+        {% for name, qty in assets.items() %}
+        <tr>
+            <td>{{ name }}</td>
+            <td>{{ qty }} Blocks</td>
+            <td style="color: var(--stonks-green);">[ HODLING ]</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <div style="margin-top: 50px; padding: 100px; border: 2px dashed rgba(255,255,255,0.2); text-align: center; border-radius: 20px;">
+        <h3>Your vault is empty.</h3>
+        <p>Return to the market to deploy your capital.</p>
+        <a href="/" class="buy-btn" style="margin-top: 20px;">MARKET FLOOR</a>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,114 @@
+:root {
+    --stonks-blue: #001f3f;
+    --stonks-sky: #0074D9;
+    --stonks-orange: #FF851B;
+    --stonks-green: #2ECC40;
+    --glass: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    background: linear-gradient(135deg, var(--stonks-blue), var(--stonks-sky));
+    background-attachment: fixed;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 900; 
+}
+
+.nav-links a {
+    color: white;
+     text-decoration: none;
+      margin-left: 20px; 
+      font-weight: 600; 
+}
+
+
+.balance-pill {
+    background: var(--stonks-green);
+    color: black;
+    padding: 5px 15px; 
+    border-radius: 20px; 
+    font-weight: bold; 
+}
+
+.market-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 40px 5%;
+}
+
+.meme-card {
+    background: var(--glass);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.meme-card:hover {
+    transform: scale(1.03);
+     border-color: var(--stonks-orange); 
+}
+
+
+.meme-card img {
+    width: 100%; 
+    height: 200px; 
+    object-fit: cover; 
+    border-radius: 10px; 
+}
+
+.price {
+    font-size: 1.8rem; 
+    margin: 15px 0; 
+    color: var(--stonks-green); 
+    font-weight: bold; 
+}
+
+.buy-btn {
+    background: var(--stonks-orange);
+    color: white;
+    text-decoration: none;
+    padding: 10px 25px;
+    border-radius: 8px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.alert {
+    background: white;
+    color: var(--stonks-blue); 
+    padding: 15px; 
+    margin: 20px 5%; 
+    border-radius: 8px; 
+    text-align: center; 
+    font-weight: bold; 
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; 
+    margin-top: 30px;
+}
+
+th, td {
+    padding: 15px; 
+    border-bottom: 1px solid var(--border);
+    text-align: left; 
+} 

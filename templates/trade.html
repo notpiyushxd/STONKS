@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<div style="max-width: 600px; margin: 60px auto; background: var(--glass); padding: 40px; border-radius: 20px; text-align: center; border: 1px solid rgba(255,255,255,0.3);">
+    <h1>Position Details</h1>
+    <h2 style="color: var(--stonks-orange);">{{ name }}</h2>
+    <div class="price" style="font-size: 3rem;">${{ price }}</div>
+    
+    <div style="margin-top: 40px;">
+        <a href="{{ url_for('buy', meme_id=meme_id, name=name, price=price) }}" class="buy-btn" style="font-size: 1.2rem; padding: 15px 50px;">
+            CONFIRM ACQUISITION
+        </a>
+    </div>
+    <p style="margin-top: 20px; opacity: 0.5;"><a href="/" style="color: white;">Cancel Order</a></p>
+</div>
+{% endblock %}
